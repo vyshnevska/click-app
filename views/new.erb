@@ -1,0 +1,34 @@
+<h1><%= @title %></h1>
+<form action="/create" id="ad" method="post" enctype="multipart/form-data">
+  <p>
+    <label> Title: </label></br>
+    <input id="title" name="ad[title]" type="text" />
+  </p>
+  <p>
+    <label> Width: </label></br>
+    <input id="width" name="ad[width]" type="text" />
+  </p>
+  <p>
+    <label> Height: </label></br>
+    <input id="height" name="ad[height]" type="text" />
+  </p>
+  <p>
+    <label> Filename: </label></br>
+    <input id="filename" name="ad[filename]" type="text" />
+  </p>
+  <p>
+    <label> URL: </label></br>
+    <input id="url" name="ad[url]" type="text" />
+  </p>
+  <p>
+    <label> Content: </label></br>
+    <input id="url" name="ad[content]" type="text" />
+  </p>
+  <p>
+    <label> Image File: </label></br>
+    <input id="image" name="image" type="file" />
+  </p>
+  <p>
+    <input type="submit">
+  </p>
+</form>
