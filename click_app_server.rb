@@ -25,3 +25,33 @@ end
 
 # Create or upgrade all tables at once
 DataMapper.auto_upgrade!
+
+# set utf-8 for outgoing
+before do
+  headers "Content-Type" => "text/html; charset=utf-8"
+end
+
+get '/' do
+end
+
+get '/ad' do
+end
+
+get '/list' do
+end
+
+get '/new' do
+end
+
+post '/create' do
+end
+
+get '/delete/:id' do
+end
+
+get '/show/:id' do
+end
+
+get '/click/:id' do
+end
+
