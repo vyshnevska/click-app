@@ -1,0 +1,18 @@
+<!DOCTYPE html PUBLIC "-..  w3c..dtd xhtml 1.0 TRANSITIONAL //EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <title><%= @title %></title>
+    <link href="css/styles.css" media='screen' rel="stylesheet" type='text/css' media='screen, projection' />
+  </head>
+  <body>
+    <%= yield %>
+
+    <div id="debug">
+      <p>Current time is <%= Time.now.strftime("%I:%M:%S %p") %>.</p>
+      <p>We are using Sinatra Version <%= Sinatra::VERSION %>.</p>
+    </div>
+
+    <p>Copyright © 2015 NinaV</p>
+  </body>
+</html>

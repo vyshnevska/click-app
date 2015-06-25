@@ -32,6 +32,8 @@ before do
 end
 
 get '/' do
+  @title = "Welcome Click App!"
+  erb :welcome
 end
 
 get '/ad' do
