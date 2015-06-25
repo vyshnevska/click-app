@@ -66,6 +66,13 @@ post '/create' do
 end
 
 get '/delete/:id' do
+  ad = Ad.get(params[:id])
+  unless ad.nil?
+    path = File.join(Dir.pwd, "/public/ads", ad.filename)
+    File.delete(path) if File.exists?(path)
+    ad.destroy
+  end
+  redirect('/list')
 end
 
 get '/show/:id' do
