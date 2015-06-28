@@ -12,3 +12,4 @@ require './routes/ads'
 
 # Create or upgrade all tables at once
 DataMapper.auto_upgrade!
+

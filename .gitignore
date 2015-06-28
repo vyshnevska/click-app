@@ -1,0 +1,4 @@
+Gemfile.lock
+click_app.db
+.DS_Store
+sqlite3.dll

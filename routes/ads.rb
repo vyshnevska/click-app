@@ -5,10 +5,12 @@ end
 
 get '/' do
   @title = "Welcome Click App!"
+  @page_header = "Welcome to the Click Tracking App!"
   erb :welcome
 end
 
 get '/ad' do
+  @page_header = "A single ad"
   id = repository(:default).adapter.query(
     'SELECT id FROM ads ORDER BY random() LIMIT 1;'
     )
@@ -23,6 +25,7 @@ get '/list' do
 end
 
 get '/new' do
+  @page_header = "A new ad"
   @title = "New Ad"
   erb :new
 end
@@ -53,6 +56,7 @@ get '/delete/:id' do
 end
 
 get '/show/:id' do
+  @page_header = "An ad"
   @ad = Ad.get(params[:id])
   if @ad
     erb :show

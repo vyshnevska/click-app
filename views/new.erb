@@ -1,34 +1,32 @@
 <h1><%= @title %></h1>
 <form action="/create" id="ad" method="post" enctype="multipart/form-data">
-  <p>
+  <div class="form-group">
     <label> Title: </label></br>
-    <input id="title" name="ad[title]" type="text" />
-  </p>
-  <p>
+    <input id="title" class="form-control" name="ad[title]" type="text" />
+  </div>
+  <div class="form-group">
     <label> Width: </label></br>
-    <input id="width" name="ad[width]" type="text" />
-  </p>
-  <p>
+    <input id="width" class="form-control" name="ad[width]" type="text" />
+  </div>
+  <div class="form-group">
     <label> Height: </label></br>
-    <input id="height" name="ad[height]" type="text" />
-  </p>
-  <p>
+    <input id="height" class="form-control" name="ad[height]" type="text" />
+  </div>
+  <div class="form-group">
     <label> Filename: </label></br>
-    <input id="filename" name="ad[filename]" type="text" />
-  </p>
-  <p>
+    <input id="filename" class="form-control" name="ad[filename]" type="text" />
+  </div>
+  <div class="form-group">
     <label> URL: </label></br>
-    <input id="url" name="ad[url]" type="text" />
-  </p>
-  <p>
+    <input id="url" class="form-control" name="ad[url]" type="text" />
+  </div>
+  <div class="form-group">
     <label> Content: </label></br>
-    <input id="url" name="ad[content]" type="text" />
-  </p>
-  <p>
+    <input id="url" class="form-control" name="ad[content]" type="text" />
+  </div>
+  <div class="form-group">
     <label> Image File: </label></br>
-    <input id="image" name="image" type="file" />
-  </p>
-  <p>
-    <input type="submit">
-  </p>
+    <input id="image" class="form-control" name="image" type="file" />
+  </div>
+  <button type="submit" class="btn btn-default">Submit</button>
 </form>
