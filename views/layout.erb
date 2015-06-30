@@ -10,8 +10,7 @@
      <script src="<%= url('/js/bootstrap.min.js') %>"></script>
   </head>
   <body>
-
-     <!-- Navigation -->
+    <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -32,12 +31,14 @@
                     <li>
                         <a href="#">About</a>
                     </li>
-                    <li>
-                        <a href="/list"> Ads List </a>
-                    </li>
-                    <li>
-                        <a href="/new"> New Ad </a>
-                    </li>
+                    <% if authorized? %>
+                      <li>
+                          <a href="/list"> Ads List </a>
+                      </li>
+                      <li>
+                          <a href="/new"> New Ad </a>
+                      </li>
+                    <% end %> 
                 </ul>
             </div>
             <!-- /.navbar-collapse -->

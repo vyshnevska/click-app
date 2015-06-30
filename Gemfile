@@ -13,9 +13,4 @@ group :test do
   gem 'rspec-json_expectations'
 end
 
-# coverege
-# gem 'simplecov'
-# gem 'metric_fu'
-# gem 'rails_best_practices'
-
 gem 'shotgun'

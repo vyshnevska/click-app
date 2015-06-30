@@ -19,18 +19,21 @@ get '/ad' do
 end
 
 get '/list' do
+  require_admin
   @title = 'List of Ads'
   @ads = Ad.all(order: [:created_at.desc])
   erb :list
 end
 
 get '/new' do
+  require_admin
   @page_header = "A new ad"
   @title = "New Ad"
   erb :new
 end
 
 post '/create' do
+  require_admin
   @ad = Ad.new(params[:ad])
   @ad.content_type = params[:image][:type]
   @ad.size = File.size(params[:image][:tempfile])
@@ -46,6 +49,7 @@ post '/create' do
 end
 
 get '/delete/:id' do
+  require_admin
   ad = Ad.get(params[:id])
   unless ad.nil?
     path = File.join(Dir.pwd, "/public/ads", ad.filename)
@@ -56,6 +60,7 @@ get '/delete/:id' do
 end
 
 get '/show/:id' do
+  require_admin
   @page_header = "An ad"
   @ad = Ad.get(params[:id])
   if @ad
