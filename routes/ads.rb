@@ -6,7 +6,7 @@ end
 get '/' do
   @title = "Welcome Click App!"
   @page_header = "Welcome to the Click Tracking App!"
-  erb :welcome
+  haml :welcome
 end
 
 get '/ad' do
@@ -15,21 +15,21 @@ get '/ad' do
     'SELECT id FROM ads ORDER BY random() LIMIT 1;'
     )
   @ad = Ad.get(id)
-  erb :ad#, layout: false
+  haml :ad#, layout: false
 end
 
 get '/list' do
   require_admin
   @title = 'List of Ads'
   @ads = Ad.all(order: [:created_at.desc])
-  erb :list
+  haml :list
 end
 
 get '/new' do
   require_admin
   @page_header = "A new ad"
   @title = "New Ad"
-  erb :new
+  haml :new
 end
 
 post '/create' do
@@ -64,7 +64,7 @@ get '/show/:id' do
   @page_header = "An ad"
   @ad = Ad.get(params[:id])
   if @ad
-    erb :show
+    haml :show
   else
     redirect('/list')
   end

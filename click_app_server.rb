@@ -1,5 +1,8 @@
 require 'rubygems'
 require 'sinatra'
+require 'sinatra/static_assets'
+require 'haml'
+
 require 'dm-core'
 require 'dm-timestamps'
 require 'dm-migrations'

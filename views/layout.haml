@@ -1,0 +1,46 @@
+!!!
+%html
+  %head
+    %meta{ :charset => 'utf-8'}
+    %meta{ :content => 'IE=edge', :http => { equiv: 'X-UA-Compatible' } }
+    %title= @title
+
+    = stylesheet_link_tag 'css/styles.css', 'css/logo-nav.css', media: 'all'
+    = javascript_include_tag 'js/bootstrap.min.js', 'js/jquery.js'
+  %body
+    <!-- Navigation -->
+    %nav.navbar.navbar-inverse.navbar-fixed-top{role: "navigation"}
+      .container
+        <!-- Brand and toggle get grouped for better mobile display -->
+        .navbar-header
+          %button.navbar-toggle{'data-toggle': 'collapse', 'data-target': '#bs-example-navbar-collapse-1"'}
+            %span.sr-only= "Toggle navigation"
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          %a.navbar-brand
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        .collapse.navbar-collapse#bs-example-navbar-collapse-1
+          %ul.nav.navbar-nav
+            %li
+              %a{href: '#'}= "About Miiii"
+            - if authorized?
+              %li
+                %a{href: '/list'}= "Ads List"
+              %li
+                %a{href: '/new'}= "New Ad"
+    <!-- Page Content -->
+    .container
+      .row
+        .col-lg-12
+          %h1= @page_header
+          = yield
+      <!-- Footer -->
+      %footer
+        .row
+          .col-lg-12
+            #debug
+              %p= "Current time is #{Time.now.strftime("%I:%M:%S %p")}"
+              %p= "We are using Sinatra Version #{Sinatra::VERSION}"
+            %p= "Copyright © 2015 NinaV"
+

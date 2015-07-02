@@ -4,6 +4,8 @@ gem 'sinatra', '1.4.6'
 gem 'data_mapper', '1.2.0'
 gem 'dm-sqlite-adapter', '1.2.0'
 
+gem 'haml'
+gem 'sinatra-static-assets'
 gem "bootstrap-sass"
 gem "compass"
 

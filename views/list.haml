@@ -1,0 +1,9 @@
+%table.list.table
+  - @ads.each_with_index do |ad, i|
+    %tr{class: 'alt if 1%2 == 0'}
+      %td
+        %a{href:"/show/#{ad.id}"}= ad.title
+      %td
+        = ad.clicks.size
+      %td
+        %a{href:"/delete/#{ad.id}"}= 'delete'
